@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   // ===== Initialize AOS =====
-  if (typeof AOS !== "undefined") AOS.init();
+ if (typeof AOS !== "undefined") {
+  AOS.init({
+    once: true, // animation happens only once
+    offset: 100, // starts animation before fully visible
+    duration: 600, // smoother animation
+    easing: "ease-out-cubic" // gentle motion
+  });
+}
 
   // ===== Initialize Typed.js =====
   if (typeof Typed !== "undefined") {

@@ -120,7 +120,7 @@ h2::after {
 }
 
 /* Experience Section */
-.service h3 {
+.experience h3 {
   color: #00fff7;
   margin-bottom: 10px;
 }
@@ -148,28 +148,30 @@ li {
   text-shadow: 0 0 6px #00fff7;
 }
 
-/* Project & Service Cards */
-.service,
-.project-item {
+/* Project & Experience Cards */
+.experience, .project-item {
   background: #222222;
   border-radius: 12px;
   padding: 30px;
   margin: 20px 0;
   box-shadow: 0 0 15px rgba(0, 255, 247, 0.3);
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
   color: #ddd;
+  min-height: 200px; /* prevents layout shift */
+  will-change: transform; /* smoother GPU-accelerated animations */
 }
 
-body.dark .service,
+body.dark .experience,
 body.dark .project-item {
   background: #111111;
 }
 
-.service:hover,
+.experience:hover,
 .project-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px #00fff7, 0 0 40px #00fff7;
+  transform: translateY(-3px); /* smaller movement */
+  box-shadow: 0 0 20px #00fff7, 0 0 30px rgba(0, 255, 247, 0.5); /* lighter glow */
 }
+
 
 /* Contact */
 form {
